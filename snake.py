@@ -102,6 +102,18 @@ while True:
     else:
         snake_body.pop()
 
+    # Speed Dynamic
+    if score < 5:
+        speed = 10
+    elif score == 5:
+        speed = 13
+    elif score == 10:
+        speed = 15
+    elif score == 25:
+        speed = 20
+    elif score >= 35:
+        speed = 30
+
     # Spawn food
     if not food_spawn:
         food_pos = [random.randrange(1,(frame_size_x // square_size)) * square_size,
